@@ -32,31 +32,3 @@ budgetButton.addEventListener("click", function() {
                              Math.abs(moneyLeft).toFixed(2);
     }
 });
-
-
-// Run the savings function when the button is clicked
-savingsButton.addEventListener("click", function() {
-
-    let goal = Number(document.querySelector("#goal").value);
-    let saved = Number(document.querySelector("#saved").value);
-    let monthlySave = Number(document.querySelector("#monthlySave").value);
-
-    let result = document.querySelector("#savingsResult");
-
-    if (goal <= 0) {
-        result.textContent = "Please enter a savings goal.";
-
-    } else if (saved >= goal) {
-        result.textContent = "You reached your savings goal!";
-
-    } else if (monthlySave <= 0) {
-        result.textContent = "Enter how much you save each month.";
-
-    } else {
-        let moneyNeeded = goal - saved;
-        let months = Math.ceil(moneyNeeded / monthlySave);
-
-        result.textContent = "You need about " + months +
-                             " months to reach your goal.";
-    }
-});
